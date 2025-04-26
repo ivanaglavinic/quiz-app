@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <h1>Quiz</h1>
+      <div id="timerDisplay">Time left: 60s</div>
+
+      <div id="quizFormWrapper">
+        <form id="quizForm">
+          <label for="question">Question:</label>
+          <input
+            type="text"
+            name="question"
+            id="questionInput"
+            maxlength="140"
+            required
+          />
+
+          <div class="answer">
+            <label>Answer 1:</label>
+            <input type="text" class="answerInput" required />
+            <input type="radio" name="correctAnswer" value="0" />
+          </div>
+
+          <div class="answer">
+            <label>Answer 2:</label>
+            <input type="text" class="answerInput" required />
+            <input type="radio" name="correctAnswer" value="1" />
+          </div>
+
+          <div class="answer">
+            <label>Answer 3:</label>
+            <input type="text" class="answerInput" required />
+            <input type="radio" name="correctAnswer" value="2" />
+          </div>
+
+          <div class="answer">
+            <label>Answer 4:</label>
+            <input type="text" class="answerInput" required />
+            <input type="radio" name="correctAnswer" value="3" />
+          </div>
+
+          <button type="submit" id="addQuestion">Add Question</button>
+        </form>
+        <div id="playerSetup">
+          <input
+            type="text"
+            id="player1Name"
+            placeholder="Player 1 Name"
+            required
+          />
+          <input
+            type="text"
+            id="player2Name"
+            placeholder="Player 2 Name"
+            required
+          />
+        </div>
+        <div id="scoreboard" style="display: none">
+          <div id="player1Display">
+            <span id="name1">Player 1</span>: <span id="score1">0</span>
+            <button class="correctBtn" data-player="1">Correct</button>
+            <button class="wrongBtn" data-player="1">Wrong</button>
+          </div>
+          <div id="player2Display">
+            <span id="name2">Player 2</span>: <span id="score2">0</span>
+            <button class="correctBtn" data-player="2">Correct</button>
+            <button class="wrongBtn" data-player="2">Wrong</button>
+          </div>
+        </div>
+        <button id="startQuizBtn">Start Quiz</button>
+      </div>
+      <div id="searchContainer">
+        <label for="searchInput">Search Questions:</label>
+        <input type="text" id="searchInput" />
+        <button type="button" id="searchButton">Search</button>
+      </div>
+      <label for="sortOrder">Sort By:</label>
+      <select id="sortOrder">
+        <option value="default">Default</option>
+        <option value="alphabetical">Alphabetical (A-Z)</option>
+        <option value="random">Random</option>
+      </select>
+      <div id="questionsContainer"></div>
+      <script src="javascript.js"></script>
+    </div>
+  </body>
+</html>
